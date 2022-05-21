@@ -1,0 +1,19 @@
+{
+  "name": "tree-datastructure-poc",
+  "version": "1.0.0",
+  "description": "Study and fun with trees structures",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "keywords": [
+    "Tree",
+    "JavaScript"
+  ],
+  "author": "Guilherme Gules Moreira",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "type": "module"
+}
