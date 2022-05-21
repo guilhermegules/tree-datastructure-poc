@@ -47,7 +47,7 @@ BST has at most two nodes (like all binary trees). However, the values are so th
 
 **Duplicates**: Some BST doesn’t allow duplicates while others add the same values as a right child. Other implementations might keep a count on a case of duplicity
 
-## BST Node Insertion
+### BST Node Insertion
 
 To insert a node in a binary tree, we need do the following:
 
