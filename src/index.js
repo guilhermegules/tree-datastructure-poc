@@ -1,22 +1,23 @@
-import BinarySearchTree from "./BinarySearchTree.js";
-import TreeNode from "./TreeNode.js";
+import Tree from "./Tree.js";
 
-const abe = new TreeNode("Abe");
-const homer = new TreeNode("Homer");
-const bart = new TreeNode("Bart");
-const lisa = new TreeNode("Lisa");
-const maggie = new TreeNode("Maggie");
+const tree = new Tree(1, "A");
 
-abe.children.push(homer);
-homer.children.push(bart, lisa, maggie);
+tree.insert(1, 2, "AB");
+tree.insert(1, 3, "AC");
+tree.insert(1, 12, "AD");
+tree.insert(12, 121, "B");
 
-console.log(abe);
-console.log(homer);
+console.log([...tree.preOrderTraversal()].map((x) => x.value));
+// ['A', 'AB', 'AC', 'AD', 'B']
 
-const bst = new BinarySearchTree();
+console.log(tree.root.value); // 'A'
+console.log("Tree has children", tree.root.hasChildren); // true
 
-bst.add(1);
-bst.add(2);
-bst.add(3);
+console.log("key 12 is a leaf", tree.find(12).isLeaf); // true
+console.log("key 121 is a leaf", tree.find(121).isLeaf); // false
+console.log(`parent value of the key 121 is ${tree.find(121).parent.value}`); // 'AD'
 
-console.log(bst.find(2));
+tree.remove(12);
+
+console.log([...tree.postOrderTraversal()].map((x) => x.value));
+// ['A']
