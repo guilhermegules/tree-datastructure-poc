@@ -69,8 +69,6 @@ export default class Tree {
       this.inOrderTraversal(node.left);
     }
 
-    console.log(node);
-
     if (node.right) {
       this.inOrderTraversal(node.right);
     }
@@ -89,8 +87,6 @@ export default class Tree {
       }
 
       const last = stack.pop();
-
-      console.log(last);
 
       current = last.right;
     }
