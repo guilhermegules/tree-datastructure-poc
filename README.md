@@ -40,3 +40,50 @@ Depending on how nodes are arranged in a binary tree, it can be full, complete o
 - A complete tree is not always full
   - Like in the image above our “complete” example, since it has a parent with only one child. If we remove the rightmost gray node, then we would have a complete and full tree but not perfect.
 - A full tree is not always complete and perfect.
+
+## Traversal
+
+### Breadth first traversal
+
+o achieve this form of traversal we can use a queue (First In First Out) data structure. Here's how the overall algorithm would look like:
+
+- Initiate a queue with root in it
+- Remove the first item out of queue
+- Push the left and right children of popped item into the queue
+- Repeat steps 2 and 3 until the queue is empty
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066197622/MEa_jdswt.png?auto=compress,format&format=webp)
+
+### Depth First Search/Traversal (DFS)
+
+In DFS, we take one node and keep exploring it's children until the depth the fully exhausted. Like:
+
+```
+root node -> left node -> right node // pre-order traversal
+left node -> root node -> right node // in-order traversal
+left node -> right node -> root node // post-order traversal
+```
+
+#### Pre-order traversal
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066335323/uu_rnMwc2.png?auto=compress,format&format=webp)
+
+**Trick:** We can use this simple trick to find out the pre order traversal af any tree manually: traverse the entire tree starting from the root node keeping yourself to the left
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066309451/tKaff2RAo0.png?auto=compress,format&format=webp)
+
+#### In-order traversal
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066398214/_S82oVUdj.png?auto=compress,format&format=webp)
+
+**Trick:** We can use this simple trick to find out in order traversal of any tree manually: keep a plane mirror horizontally at the bottom of the tree and take the projection of all the nodes.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066383550/7fxAFVhV1.png?auto=compress,format&format=webp)
+
+#### Post-order traversal
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066468275/aXvp4kZ-V.png?auto=compress,format&format=webp)
+
+**Trick:** Form quick manual post order traversal any tree: pluck all the leftmost leaf nodes one by one
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1630066456516/oWu_cm681.png?auto=compress,format&format=webp)
