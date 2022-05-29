@@ -143,36 +143,38 @@ export default class Tree {
     return tree;
   }
 
-  insert(parentNodeKey, key, value = key, left = null, right = null) {
+  insert({ parentNodeKey, key, value = key, left = null, right = null }) {
     for (const node of this.preOrderTraversalIterative()) {
       if (node.key === parentNodeKey) {
-        node.children.push(
+        node.children?.push(
           new TreeNode({ key, value, parent: node, left, right })
         );
-
-        return true;
       }
     }
-
-    return false;
   }
 
   remove(key) {
-    for (const node of this.preOrderTraversal()) {
+    for (const node of this.preOrderTraversalIterative()) {
       const filtered = node.children.filter((child) => child.key !== key);
       if (filtered.length !== node.children.length) {
         node.children = filtered;
-        return true;
+
+        return node.children;
       }
     }
-    return false;
+
+    return null;
   }
 
   find(key) {
-    for (let node of this.preOrderTraversal()) {
+    for (const node of this.preOrderTraversalIterative()) {
       if (node.key === key) return node;
+
+      const child = node.children.find((child) => child.key === key);
+
+      return child ?? null;
     }
 
-    return undefined;
+    return null;
   }
 }
