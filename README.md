@@ -1,6 +1,6 @@
-# Tree Data Structure
+# :deciduous_tree: Tree Data Structure
 
-## To start
+## :bicyclist: To start
 
 ```bash
 npm install # for install all dependencies
@@ -10,7 +10,7 @@ npm install # for install all dependencies
 npm start # for start the application
 ```
 
-## Basic Concepts
+## :toolbox: Basic Concepts
 
 A tree is a data structure where a node can have zero or more children and each node has a value
 
@@ -23,7 +23,7 @@ The naming of three is because the data structure resembles a real tree. Startin
 - **Height** of the tree is the distance between the farthest leaf to the root
 - **Deep** or **level** of a node is the distance between the root and the node in question
 
-## Full, Complete and Perfect binary trees
+## :atom_symbol: Full, Complete and Perfect binary trees
 
 Depending on how nodes are arranged in a binary tree, it can be full, complete or perfect:
 
